@@ -5,5 +5,18 @@
 {% endblock %}
 
 {% block main %}
-    <p>Tu będzie main page</p>
+    {% if alert is not none %}
+        <div class="alert alert-warning" role="alert">
+            The city {{alert}} doesn't exist in the database
+        </div>
+    {% endif %}
+    <form action="/main" method="post">
+        <select class="form-group" name="symbol">
+                <option>city</option>
+            </select>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Type the city name" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Search</button>
+    </form>
 {% endblock %}
