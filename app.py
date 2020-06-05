@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_session import Session
 from helpers import getData
 
 app = Flask(__name__)
@@ -48,10 +49,19 @@ def main():
         weather_data = getData(city.name)
         if(weather_data["cod"] == '404'):
             alert = city.name
+            to_delete = Weather.query.filter_by(name=city.name).first()
+            db.session.delete(to_delete)
+            db.session.commit()
+        else:
+            all_weather_data.append(weather_data)
         print(weather_data)
 
-    return render_template("main.html", alert=alert)
+    return render_template("main.html", alert=alert, weather_list=all_weather_data)
 
+
+@app.route('/main/<city>')
+def city(city):
+    return f'<h1>Tu będzie pogoda dla {city}</h1>'
 
 if __name__ == '__main__':
     app.run()

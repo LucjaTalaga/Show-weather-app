@@ -1,13 +1,44 @@
 header{
     height: 15vh;
+    min-height: 100px;
     background-color: purple;
 }
 
 header h1 {
     color: wheat;
     text-align: center;
+    padding-top: 20px;
 }
+main .form-control
+{
+    display: inline-block;
+    width: auto;
+}
+
+main{
+    height: 85vh;
+    overflow-x: auto;
+    text-align: center;
+}
+
 p {
     color: purple;
     font-size: 12px;
+}
+
+footer{
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #cccccc;
+    min-height: 91.5px;
+}
+
+footer p{
+    color: darkcyan;
+    font-size: 19px;
+    margin-bottom: 2vh;
 }
