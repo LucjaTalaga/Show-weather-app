@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Weather in {{ weather["city"]}}
+{% endblock %}
+
+{% block main %}
+<section class="city">
+    <h1 id='xD'>{{ weather["city"]}}</h1>
+    <table id='weather_table'>
+        <tbody>
+            <tr>
+                <th>Temperature</th>
+                <td>{{ weather["temp"]}} °C</td>
+                <th>Feels like</th>
+                <td>{{ weather["temp_feels"]}} °C</td>
+            </tr>
+            <tr>
+                <th>Min temperature</th>
+                <td>{{ weather["temp_min"]}} °C</td>
+                <th>Max temperature</th>
+                <td>{{ weather["temp_max"]}} °C</td>
+            </tr>
+            <tr>
+                <th>Pressure</th>
+                <td>{{ weather["pressure"]}} hPa</td>
+                <th>Humidity</th>
+                <td>{{ weather["humidity"]}} %</td>
+            </tr>
+            <tr>
+                <th>Wind</th>
+                <td>{{ weather["wind"]}} m/s</td>
+                <th>Cloudiness</th>
+                <td>{{ weather["cloudiness"]}} %</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}
