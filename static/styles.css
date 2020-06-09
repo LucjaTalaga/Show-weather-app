@@ -5,7 +5,7 @@ header{
     background-color:darkkhaki;
 }
 
-h1{
+h1, h2{
     font-family: 'Lobster', cursive;
 }
 header h1 {
@@ -13,6 +13,22 @@ header h1 {
     text-align: center;
     padding-top: 20px;
 }
+
+#index{
+    text-decoration: none;
+    font-size: 22px;
+    width: 310px;
+    height: 64px;
+    background-color: gray;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    border-radius: 40px;
+    box-shadow: 5px 10px 14px #07ACE629;
+    margin-top: 50px;
+}
+
 main .form-control
 {
     display: inline-block;
@@ -20,6 +36,7 @@ main .form-control
 }
 
 main{
+    min-height: 85vh;
     overflow-x: auto;
     text-align: center;
 }
@@ -44,6 +61,7 @@ footer p{
 
 #search{
     margin-bottom: 10px;
+    color: gray;
 }
 .weather-data{
     display: flex;
@@ -52,7 +70,7 @@ footer p{
 }
 .weather{
     width: 400px;
-    border: 1px solid black;
+    border: 1px solid burlywood;
     border-radius: 10px;
     margin-bottom: 5vh;
     position: relative;
